@@ -20,6 +20,10 @@ The nine one-shot Python scripts that generated figures and analysis for the ICB
 | `calculate_minimum_import_set.py` | Minimal import-closure computation |
 | `generate_feedback_loop.py` | Feedback generation for term improvements |
 
+### `tests/`
+
+`test_analyze_ontogpt_grounding.py` was the only test covering a presentations script. It is archived here alongside the code it exercised; it was removed from metpo in the same change.
+
 ## Provenance
 
 - Source repo: [berkeleybop/metpo](https://github.com/berkeleybop/metpo)
