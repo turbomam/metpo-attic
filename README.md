@@ -1,12 +1,12 @@
 # metpo-attic
 
-Archived code removed from [berkeleybop/metpo](https://github.com/berkeleybop/metpo) during scope-narrowing. Nothing here is maintained. It is kept only so retired work stays recoverable and readable without digging through git history.
+Archived code and content removed from [berkeleybop/metpo](https://github.com/berkeleybop/metpo) during scope-narrowing (umbrella [berkeleybop/metpo#433](https://github.com/berkeleybop/metpo/issues/433)). Nothing here is maintained. It is kept only so retired work stays recoverable and readable without digging through git history.
 
-## Contents
+Each top-level directory is one retired subsystem, with its own provenance below.
 
-### `presentations/`
+## `presentations/` + `tests/`
 
-The nine one-shot Python scripts that generated figures and analysis for the ICBO 2025 METPO talk. They previously lived at `metpo/presentations/` in the ontology repo. They are not part of the ontology build, the released artifacts, or the production CLI, and were never maintained as reusable tools.
+The nine one-shot Python scripts that generated figures and analysis for the ICBO 2025 METPO talk, plus the single test that covered one of them. They previously lived at `metpo/presentations/`. Not part of the ontology build, the released artifacts, or the production CLI, and never maintained as reusable tools.
 
 | Script | What it did |
 |--------|-------------|
@@ -20,20 +20,23 @@ The nine one-shot Python scripts that generated figures and analysis for the ICB
 | `calculate_minimum_import_set.py` | Minimal import-closure computation |
 | `generate_feedback_loop.py` | Feedback generation for term improvements |
 
-### `tests/`
+**Provenance:** original path `metpo/presentations/`; removed by [berkeleybop/metpo#456](https://github.com/berkeleybop/metpo/pull/456); removed from metpo `main` at commit `9ef3859`.
 
-`test_analyze_ontogpt_grounding.py` was the only test covering a presentations script. It is archived here alongside the code it exercised; it was removed from metpo in the same change.
+## `literature_mining/` + `metpo-package/metpo/literature_mining/`
 
-## Provenance
+The OntoGPT-based literature-mining subsystem: a full working tree (corpus of abstracts and full-text PDFs, extraction configs, OntoGPT/artl-cli outputs, its own Makefile) plus the `metpo.literature_mining` Python package (extraction, grounding, and analysis scripts) that drove it. Used for the ICBO 2025 named-entity-recognition and grounding experiments. Not part of the ontology build or the released ontology.
 
-- Source repo: [berkeleybop/metpo](https://github.com/berkeleybop/metpo)
-- Original path: `metpo/presentations/`
-- Removed by: [berkeleybop/metpo#456](https://github.com/berkeleybop/metpo/pull/456) (umbrella [#433](https://github.com/berkeleybop/metpo/issues/433))
-- Removed from metpo `main` at commit `9ef3859`
-- Last substantive change to these scripts: metpo commit `9dbf53e` (2026-06-02)
+- `literature_mining/` is the working directory as it stood in metpo (inputs, outputs, corpus, Makefile).
+- `metpo-package/metpo/literature_mining/` is the Python package that was under `metpo/literature_mining/` in the source repo, kept under `metpo-package/` here so the two trees stay distinct.
 
-To recover a file with its full metpo history instead of this snapshot:
+The publication PDFs under `literature_mining/` are open-access (Frontiers, bioRxiv) and were already public in metpo.
+
+**Provenance:** original paths `literature_mining/` and `metpo/literature_mining/`; removed by the literature-mining retirement PR (see [berkeleybop/metpo#433](https://github.com/berkeleybop/metpo/issues/433)).
+
+## Recovery
+
+To recover any file with its full metpo history instead of this snapshot:
 
 ```bash
-git -C <metpo-clone> log --all -- metpo/presentations/<file>.py
+git -C <metpo-clone> log --all -- <original/path>
 ```
