@@ -33,6 +33,10 @@ The publication PDFs under `literature_mining/` are open-access (Frontiers, bioR
 
 **Provenance:** original paths `literature_mining/` and `metpo/literature_mining/`; removed by [berkeleybop/metpo#586](https://github.com/berkeleybop/metpo/pull/586) (umbrella [#433](https://github.com/berkeleybop/metpo/issues/433)).
 
+## `.env.template`
+
+The archived subsystems read configuration from a repository-root `.env` and tell users to copy `.env.template` (for example the literature-mining scripts use `OPENAI_API_KEY`, `BIOPORTAL_API_KEY`, and `CBORG_API_KEY`/`CBORG_API_BASE`). metpo's `.env.template` was trimmed as those subsystems were retired, so a snapshot of the full version is kept here to document the environment contract the archived code expects. Values are placeholders only; no secrets.
+
 ## Recovery
 
 To recover any file with its full metpo history instead of this snapshot:
