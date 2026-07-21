@@ -33,6 +33,17 @@ The publication PDFs under `literature_mining/` are open-access (Frontiers, bioR
 
 **Provenance:** original paths `literature_mining/` and `metpo/literature_mining/`; removed by [berkeleybop/metpo#586](https://github.com/berkeleybop/metpo/pull/586) (umbrella [#433](https://github.com/berkeleybop/metpo/issues/433)).
 
+## `external/`
+
+The non-regenerable pieces of metpo's former `external/` directory. metpo stopped committing that directory (downloaded external ontologies and historical METPO submission OWLs are build artifacts, fetched on demand and now git-ignored). Only the parts that cannot be re-downloaded are archived here:
+
+- `external/ontologies/manual/n4l_merged.owl` — a manually assembled merge (not available from OLS or BioPortal), used as input to the retired embedding pipeline.
+- `external/README.md`, `external/databases/README.md` — the directory's original documentation, for context.
+
+The downloaded ontologies (OLS/BioPortal) and the historical METPO submission OWLs are not archived: the former are re-downloadable, and the latter were already processed into `metadata/ontology/historical_submissions/entity_extracts/` (committed in metpo, and what the ID-allocation audit actually reads).
+
+**Provenance:** original path `external/`; removed by the external/ retirement PR (umbrella [berkeleybop/metpo#433](https://github.com/berkeleybop/metpo/issues/433), relates to [#380](https://github.com/berkeleybop/metpo/issues/380)).
+
 ## Recovery
 
 To recover any file with its full metpo history instead of this snapshot:
