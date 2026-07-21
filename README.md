@@ -31,7 +31,7 @@ The OntoGPT-based literature-mining subsystem: a full working tree (corpus of ab
 
 The publication PDFs under `literature_mining/` are open-access (Frontiers, bioRxiv) and were already public in metpo.
 
-**Provenance:** original paths `literature_mining/` and `metpo/literature_mining/`; removed by the literature-mining retirement PR (see [berkeleybop/metpo#433](https://github.com/berkeleybop/metpo/issues/433)).
+**Provenance:** original paths `literature_mining/` and `metpo/literature_mining/`; removed by [berkeleybop/metpo#586](https://github.com/berkeleybop/metpo/pull/586) (umbrella [#433](https://github.com/berkeleybop/metpo/issues/433)).
 
 ## Recovery
 
